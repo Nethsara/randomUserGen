@@ -24,8 +24,6 @@ route.get("/update-user", services.update_user);
 
 route.get("/new-user", services.new_user);
 
-//route.get("/new", services.new_user);
-
 // API
 route.post("/api/users", controller.create);
 route.get("/api/users", controller.find);

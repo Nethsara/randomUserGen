@@ -18,16 +18,18 @@ exports.add_user = (req, res) => {
 };
 
 exports.new_user = (req, res) => {
+  const gende = req.query.gender;
+  console.log(gende);
   axios
-    .get("https://randomuser.me/api/")
+    .get("https://randomuser.me/api", { params: { gender: gende } })
     .then((user) => {
       let data = user.data.results[0];
 
       let dd = {
-        name: data.name.first,
+        name: `${data.name.first} ${data.name.last}`,
         email: data.email,
         gender: data.gender,
-        status: data.name.first,
+        img: data.picture.large,
       };
       console.log(data);
       res.render("add_user", { user: dd });

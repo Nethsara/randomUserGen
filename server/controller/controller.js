@@ -15,7 +15,7 @@ exports.create = (req, res) => {
     name: req.body.name,
     email: req.body.email,
     gender: req.body.gender,
-    status: req.body.status,
+    img: req.body.img,
   });
 
   // save user in the database
@@ -28,7 +28,8 @@ exports.create = (req, res) => {
     .catch((err) => {
       res.status(500).send({
         message:
-          "fk" || "Some error occurred while creating a create operation",
+          err.message ||
+          "Some error occurred while creating a create operation",
       });
     });
 };
