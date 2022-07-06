@@ -108,19 +108,3 @@ exports.delete = (req, res) => {
       });
     });
 };
-
-// exports.gen = (req, res) => {
-//   axios
-//     .get("https://randomuser.me/api/")
-//     .then((user) => {
-//       let data = user.data.results[0];
-//       let fName = data.name.first;
-//       console.log(data);
-//       //res.send(data);
-//     })
-//     .catch((err) => {
-//       res
-//         .status(500)
-//         .send({ message: err.message || "Error retreive data from API" });
-//     });
-// };
