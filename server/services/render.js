@@ -5,7 +5,6 @@ exports.homeRoutes = (req, res) => {
   axios
     .get("http://localhost:3000/api/users")
     .then(function (response) {
-      console.log(response.data);
       res.render("index", { users: response.data });
     })
     .catch((err) => {
@@ -13,27 +12,21 @@ exports.homeRoutes = (req, res) => {
     });
 };
 
-exports.add_user = (req, res) => {
-  res.render("add_user");
-};
-
 exports.new_user = (req, res) => {
-  const gende = req.query.gender;
-  console.log(gende);
+  const gender = req.query.gender;
   axios
-    .get("https://randomuser.me/api", { params: { gender: gende } })
+    .get("https://randomuser.me/api", { params: { gender: gender } })
     .then((user) => {
-      let data = user.data.results[0];
+      const data = user.data.results[0];
 
-      let dd = {
+      const dd = {
         name: `${data.name.first} ${data.name.last}`,
         email: data.email,
         gender: data.gender,
         img: data.picture.large,
       };
-      console.log(data);
+
       res.render("add_user", { user: dd });
-      //res.send(data);
     })
     .catch((err) => {
       res
