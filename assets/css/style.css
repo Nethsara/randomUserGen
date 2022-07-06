@@ -23,6 +23,32 @@ a {
   margin: auto;
 }
 
+.box {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: #231e39;
+  border-radius: 50%;
+}
+
+.content {
+  position: absolute;
+  inset: 30px;
+  border: 6px solid #070a1c;
+  z-index: 3;
+  border-radius: 50%;
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  pointer-events: none;
+}
 .nav-brand {
   font-size: 1.5em;
   font-weight: bold;
@@ -65,12 +91,6 @@ a {
   -webkit-text-fill-color: transparent;
 }
 
-#header nav {
-  background-color: #06d6a0;
-  padding: 1em 0;
-  width: 100%;
-}
-
 #site-main {
   margin-top: 6em;
   font-family: "Barlow", sans-serif;
@@ -104,18 +124,13 @@ table {
   margin: 0 0.2em;
 }
 
-.table tr:hover {
-  background-color: #06d6a0;
-}
-
 .table tr:hover td > a {
   box-shadow: none;
 }
 
 .table .thead-dark th {
-  color: #fff;
-  background-color: var(--dark);
-  border-color: #32383e;
+  color: rgb(19, 18, 18);
+  border-color: #000000;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -177,6 +192,16 @@ table {
 #update_user .form-group .radio,
 #add_user .form-group .radio {
   margin: 1em 2em;
+}
+
+/* adding style to drop down */
+.select {
+  padding: 8px 12px;
+  color: #333333;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 /* adding style to radio buttons */

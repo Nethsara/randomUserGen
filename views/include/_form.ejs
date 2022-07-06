@@ -36,7 +36,7 @@
     
 
     <div class="form-group">
-      <label for="Email" class="text-light">Email</label>
+      <label for="Email" class="text-light">Img URL </label>
       <input
         type="text"
         name="img"
@@ -48,11 +48,14 @@
 
      <div class="form-group">
       <label for="Email" class="text-light">Image</label>
-      <img src="<%= user.img%>">
+      
     </div>
 
+    
+        <img src="<%= user.img%>">
+      
     <div class="form-group">
-      <button type="submit" class="btn text-dark update">Save</button>
+      <button type="submit" class="primary">Save user to DB</button>
     </div>
   </div>
 </form>
